@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{& block title&}
+    Registrar Persona
+{& endblock title&}
+
+{% block content %} 
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">Registrar Persona</h1>
+        <div class="cell">
+            <form class="cell callout grid-x grid-margin-x" method="POST">{%  csrf_token %}
+                <div class="cell medium-6">Nombres:
+                    {{ form.first_name}}
+                </div>
+                <div class="cell medium-6">Apellidos:
+                    {{ form.last_name}}
+                </div>
+                <div class="cell medium-6">Puesto:
+                    {{ form.job}}
+                </div>
+                <div class="cell medium-6">Departamento:
+                    {{ form.departamento}}
+                </div>
+                <div class="cell medium-6">Habilidades:
+                    {{ form.habilidades}}
+                </div>
+                <div class="cell medium-6">Hoja de vida:
+                    <p class="cell">
+                        {{ form.hoja_Vida }}
+                    </p>
+                </div>
+                <div class="cell">
+                    <button type="submit" class="success button">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

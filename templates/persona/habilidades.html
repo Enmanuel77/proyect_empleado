@@ -1,0 +1,14 @@
+<h1>Listar Habilidades</h1>
+
+<form method="get">{% csrf_token %}
+    <input type="text" id="word" name="word" placeholder="ingrese nombre aqui">
+    <button type="submit">Buscar</button>
+</form>
+
+
+{% for h in habilidades %}
+    <li>{{ h }}</li>
+{% endfor %}
+
+
+    
